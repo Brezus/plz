@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+      :root {
+        --Dark-cyan: hsl(185, 75%, 39%);
+        --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+        --Dark-grayish-blue: hsl(227, 10%, 46%);
+        --Dark-gray: hsl(0, 0%, 59%);
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        font-family: "Kumbh Sans", sans-serif;
+      }
+      body {
+        background: var(--Dark-cyan);
+        position: relative;
+        color: var(--Very-dark-desaturated-blue);
+      }
+      .circles {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        /* background: url(/bg-pattern-top.svg), url(/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-position: left -200px top -230px, right -290px bottom;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+      }
+      .circles img {
+        object-fit: contain;
+        height: 600px;
+        width: 600px;
+      }
+      .circles img.top {
+        position: absolute;
+        top: -270px;
+        left: -360px;
+      }
+      @media screen and (min-width: 700px) {
+        .circles img.top {
+          height: unset;
+          width: unset;
+          position: absolute;
+          left: -370px;
+          top: -570px;
+        }
+      }
+      .circles img.bottom {
+        position: absolute;
+        bottom: -260px;
+        right: -368px;
+      }
+      @media screen and (min-width: 700px) {
+        .circles img.bottom {
+          height: unset;
+          width: unset;
+          position: absolute;
+          bottom: -680px;
+          right: -330px;
+        }
+      }
+      .visual-cont {
+        width: 375px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+          0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+          0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+          0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+      }
+      .visual-cont img.bubly {
+        width: 100%;
+        margin-bottom: -60px;
+        /* margin-bottom: 20px; */
+      }
+      /* .visual-cont img.vic {
+  border-radius: 50%;
+  border: 5px solid whitesmoke;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  
+} */
+      .visual-cont img.vic {
+        height: 90px;
+        width: 90px;
+        object-fit: contain;
+        border-radius: 50%;
+        border: 6px solid rgb(255, 255, 255);
+        transition: 1s ease-in;
+      }
+      .visual-cont img.vic:hover {
+        border: 10px solid rgb(255, 255, 255);
+      }
+      .visual-cont h1 {
+        padding-top: 20px;
+      }
+      .visual-cont > h3 {
+        padding: 12px 0 25px 0;
+        font-size: 13px;
+      }
+      hr {
+        color: var(--Dark-gray);
+        opacity: 0.3;
+      }
+      span {
+        color: var(--Dark-grayish-blue);
+        font-weight: 400;
+      }
+      .stats {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin: 30px auto 30px auto;
+        font-weight: 700;
+      }
+      .stats p {
+        padding: 0 30px;
+      }
+      .stats span {
+        display: block;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+      .attribution {
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+      }
+      .attribution a {
+        color: whitesmoke;
+      }
+    </style>
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circles">
+      <img
+        src="../prof/bg-pattern-top.svg"
+        alt=""
+        class="top"
+      />
+      <img
+        src="../prof/bg-pattern-bottom.svg"
+        alt=""
+        class="bottom"
+      />
+    </div>
+    <div class="visual-cont">
+      <img
+        src="../prof/bg-pattern-card.svg"
+        alt=""
+        class="bubly"
+      />
+      <img src="../prof/image-victor.jpg" alt="" class="vic" />
+      <h1>Victor Crest <span>26</span></h1>
+      <h3><span>London</span></h3>
+      <hr size="1" width="100%" />
+      <div class="stats">
+        <p>80K <span>Followers</span></p>
+        <p>803K <span>Likes</span></p>
+        <p>1.4K <span>Photos</span></p>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/Brezus" target="_blank"
+        >Millz</a
+      >.
+    </div>
+  </body>
+</html>
